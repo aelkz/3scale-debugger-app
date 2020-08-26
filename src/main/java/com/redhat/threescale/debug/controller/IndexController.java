@@ -40,7 +40,7 @@ public class IndexController {
         return modelAndView;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, path = "/debug")
     public Debug getServerStatus(@RequestHeader Map<String,String> headers){
         Debug obj = new Debug();
         List<String> tempList = new ArrayList<>();
@@ -117,10 +117,14 @@ public class IndexController {
             e.printStackTrace();
         }
 
-        headers.forEach((key,value) ->{
-            System.out.println("Header Name: "+key+" Header Value: "+value);
-            obj.getHeaders().put(key,value);
-        });
+        if (headers != null && !headers.isEmpty()) {
+            Map<String,String> values = new HashMap<>();
+            headers.forEach((key, value) -> {
+                System.out.println("Header Name: " + key + " Header Value: " + value);
+                values.put(key,value);
+            });
+            obj.setHeaders(values);
+        }
 
         return obj;
     }

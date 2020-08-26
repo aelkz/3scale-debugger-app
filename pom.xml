@@ -8,6 +8,8 @@
     <artifactId>springboot-debugger-app</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <packaging>jar</packaging>
+
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -159,28 +161,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-        <!-- security -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-            <version>${version.springboot}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
-            <version>${version.springboot}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-oauth2-client</artifactId>
-            <version>${version.springboot}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <version>5.3.3.RELEASE</version>
-            <scope>test</scope>
         </dependency>
         <!-- reactive -->
         <dependency>
